@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio Figma Reference</title>
+    <style>
+      :root {
+        --bg: #f7f4ee;
+        --ink: #18201c;
+        --muted: #68736b;
+        --surface: #ffffff;
+        --line: #dcd5ca;
+        --accent: #b9ff5a;
+        --blue: #3b6cff;
+        --coral: #ff6b57;
+        --soft-blue: #bbd0ff;
+        --soft-coral: #ffd1c9;
+        --dark: #111713;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Inter, Arial, sans-serif;
+        color: var(--ink);
+        background: #e9e5dc;
+      }
+
+      .canvas {
+        display: grid;
+        gap: 40px;
+        padding: 40px;
+      }
+
+      .frame-label {
+        margin: 0 0 12px;
+        color: #4f584f;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .desktop {
+        width: 1440px;
+        overflow: hidden;
+        background: var(--bg);
+        box-shadow: 0 24px 80px rgba(17, 23, 19, 0.12);
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 84px;
+        padding: 0 64px;
+      }
+
+      .logo {
+        font-size: 26px;
+        font-weight: 800;
+      }
+
+      .nav {
+        display: flex;
+        gap: 28px;
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      .button-row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 46px;
+        padding: 0 20px;
+        border-radius: 999px;
+        border: 1px solid var(--ink);
+        background: var(--ink);
+        color: var(--surface);
+        font-size: 15px;
+        font-weight: 800;
+      }
+
+      .button.secondary {
+        border-color: var(--line);
+        background: var(--surface);
+        color: var(--ink);
+      }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 520px;
+        align-items: center;
+        gap: 80px;
+        min-height: 650px;
+        padding: 64px;
+      }
+
+      .tag {
+        display: inline-flex;
+        width: fit-content;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: #eef1ea;
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .tag.accent {
+        background: var(--accent);
+      }
+
+      h1 {
+        max-width: 670px;
+        margin: 24px 0 18px;
+        font-size: 64px;
+        line-height: 70px;
+        letter-spacing: 0;
+      }
+
+      .lead {
+        max-width: 610px;
+        margin: 0 0 28px;
+        color: var(--muted);
+        font-size: 19px;
+        line-height: 31px;
+      }
+
+      .dashboard {
+        padding: 24px;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: var(--surface);
+      }
+
+      .dashboard-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 26px;
+      }
+
+      .dashboard-title {
+        font-size: 20px;
+        font-weight: 800;
+      }
+
+      .progress {
+        margin-bottom: 22px;
+      }
+
+      .progress-top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        font-size: 15px;
+        font-weight: 700;
+      }
+
+      .bar {
+        height: 12px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: #eef0ea;
+      }
+
+      .bar span {
+        display: block;
+        height: 100%;
+        border-radius: 999px;
+      }
+
+      .section {
+        padding: 84px 64px 90px;
+      }
+
+      .section.white {
+        background: var(--surface);
+      }
+
+      .kicker {
+        margin: 0 0 12px;
+        color: var(--blue);
+        font-size: 13px;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      h2 {
+        max-width: 760px;
+        margin: 0 0 34px;
+        font-size: 34px;
+        line-height: 42px;
+      }
+
+      .filters,
+      .skills,
+      .cards,
+      .steps {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .filters {
+        margin-bottom: 34px;
+      }
+
+      .card {
+        width: 330px;
+        min-height: 520px;
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: var(--surface);
+      }
+
+      .visual {
+        height: 132px;
+        margin-bottom: 18px;
+        padding: 18px;
+        border-radius: 14px;
+        background: var(--accent);
+        font-size: 20px;
+        font-weight: 800;
+      }
+
+      .visual.blue {
+        background: var(--soft-blue);
+      }
+
+      .visual.coral {
+        background: var(--soft-coral);
+      }
+
+      .visual.poster {
+        height: 300px;
+        padding: 0;
+        overflow: hidden;
+        background: var(--ink);
+      }
+
+      .visual.poster img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center top;
+      }
+
+      .meta {
+        margin: 0 0 10px;
+        color: var(--blue);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      h3 {
+        margin: 0 0 10px;
+        font-size: 24px;
+        line-height: 30px;
+      }
+
+      .card p,
+      .step p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 15px;
+        line-height: 23px;
+      }
+
+      .card-tags {
+        display: flex;
+        gap: 8px;
+        margin-top: 20px;
+      }
+
+      .step {
+        width: 310px;
+        min-height: 190px;
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: var(--surface);
+      }
+
+      .step-number {
+        color: var(--blue);
+        font-weight: 800;
+      }
+
+      .dark-section {
+        background: var(--dark);
+        color: var(--bg);
+      }
+
+      .dark-section h2 {
+        color: var(--bg);
+      }
+
+      .dark-section .tag {
+        background: #26332c;
+        color: var(--bg);
+      }
+
+      .contact {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 300px;
+        padding: 70px 64px;
+        background: var(--accent);
+      }
+
+      .contact h2 {
+        margin: 0;
+        font-size: 42px;
+        line-height: 50px;
+      }
+
+      .mobile {
+        width: 390px;
+        overflow: hidden;
+        background: var(--bg);
+        box-shadow: 0 24px 80px rgba(17, 23, 19, 0.12);
+      }
+
+      .mobile .header {
+        height: 72px;
+        padding: 0 20px;
+      }
+
+      .burger {
+        display: grid;
+        gap: 5px;
+        width: 42px;
+        height: 42px;
+        place-content: center;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--surface);
+      }
+
+      .burger span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        border-radius: 2px;
+        background: var(--ink);
+      }
+
+      .mobile-section {
+        padding: 42px 20px 50px;
+      }
+
+      .mobile-section.white {
+        background: var(--surface);
+      }
+
+      .mobile-section.dark-section {
+        background: var(--dark);
+      }
+
+      .mobile h1 {
+        font-size: 42px;
+        line-height: 46px;
+      }
+
+      .mobile h2 {
+        font-size: 30px;
+        line-height: 36px;
+      }
+
+      .mobile .card {
+        width: 350px;
+        min-height: 330px;
+      }
+
+      .mobile .visual.poster {
+        height: 330px;
+      }
+
+      .mobile .cards,
+      .mobile .steps,
+      .mobile .skills {
+        display: grid;
+        gap: 14px;
+      }
+
+      .mobile .step {
+        width: 350px;
+        min-height: 150px;
+      }
+
+      .mobile .contact {
+        display: grid;
+        gap: 22px;
+        min-height: auto;
+        padding: 46px 20px 54px;
+      }
+
+      .mobile .contact h2 {
+        font-size: 32px;
+        line-height: 38px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="canvas">
+      <section>
+        <p class="frame-label">Desktop - Accueil portfolio</p>
+        <div class="desktop">
+          <header class="header">
+            <div class="logo">DR.</div>
+            <nav class="nav">
+              <span>Projets</span><span>Méthode</span><span>Compétences</span><span>Contact</span>
+            </nav>
+            <div class="button secondary"><span class="dot"></span>Me contacter</div>
+          </header>
+
+          <section class="hero">
+            <div>
+              <span class="tag accent">Disponible pour stage / alternance</span>
+              <h1>Chef de projet digital junior, je transforme les idées en expériences claires.</h1>
+              <p class="lead">Je cadre les besoins, structure les parcours et coordonne les livrables pour créer des interfaces utiles, cohérentes et faciles à défendre.</p>
+              <div class="button-row">
+                <div class="button"><span class="dot"></span>Voir mes projets</div>
+                <div class="button secondary"><span class="dot"></span>Télécharger mon CV</div>
+              </div>
+            </div>
+            <aside class="dashboard">
+              <div class="dashboard-head">
+                <div class="dashboard-title">Projet en cours</div>
+                <span class="tag accent">Sprint 02</span>
+              </div>
+              <div class="progress">
+                <div class="progress-top"><span>Cadrage</span><span>92%</span></div>
+                <div class="bar"><span style="width: 92%; background: var(--accent)"></span></div>
+              </div>
+              <div class="progress">
+                <div class="progress-top"><span>Prototype</span><span>68%</span></div>
+                <div class="bar"><span style="width: 68%; background: var(--soft-blue)"></span></div>
+              </div>
+              <div class="progress">
+                <div class="progress-top"><span>Recette</span><span>34%</span></div>
+                <div class="bar"><span style="width: 34%; background: var(--soft-coral)"></span></div>
+              </div>
+              <p class="lead" style="font-size: 16px; line-height: 25px; margin: 0">Livrables : benchmark, zoning, wireframes, prototype interactif, suivi des retours.</p>
+            </aside>
+          </section>
+
+          <section class="section white">
+            <p class="kicker">Projets sélectionnés</p>
+            <h2>Affiches sportives et projets digitaux pour montrer direction artistique, UX et pilotage.</h2>
+            <div class="filters">
+              <span class="tag accent">Tous</span><span class="tag">Affiches</span><span class="tag">Sports design</span><span class="tag">UX/UI</span>
+            </div>
+            <div class="cards">
+              <article class="card">
+                <div class="visual poster">
+                  <img src="assets/posters/wemby.jpg" alt="Affiche Victor Wembanyama San Antonio Spurs" />
+                </div>
+                <p class="meta">NBA DESIGN</p>
+                <h3>Victor Wembanyama</h3>
+                <p>Affiche autour de Wemby, avec composition multi-échelle, texture forte et direction artistique très sportive.</p>
+                <div class="card-tags"><span class="tag">Affiche</span><span class="tag">NBA</span></div>
+              </article>
+              <article class="card">
+                <div class="visual poster">
+                  <img src="assets/posters/sqbb.png" alt="Affiche Saint-Quentin Basketball" />
+                </div>
+                <p class="meta">BASKETBALL DESIGN</p>
+                <h3>Saint-Quentin BB</h3>
+                <p>Visuel collectif avec traitement graphique intense, idéal pour une communication de club ou de matchday.</p>
+                <div class="card-tags"><span class="tag">Affiche</span><span class="tag">Club</span></div>
+              </article>
+              <article class="card">
+                <div class="visual poster">
+                  <img src="assets/posters/leon-marchand.png" alt="Affiche Léon Marchand Jeux Olympiques 2024" />
+                </div>
+                <p class="meta">OLYMPIC DESIGN</p>
+                <h3>Léon Marchand</h3>
+                <p>Affiche Jeux Olympiques avec couleurs vives, univers aquatique et hiérarchie pensée pour Instagram.</p>
+                <div class="card-tags"><span class="tag">Affiche</span><span class="tag">Olympics</span></div>
+              </article>
+              <article class="card">
+                <div class="visual poster">
+                  <img src="assets/posters/tj-shorts.png" alt="Affiche TJ Shorts Paris Basketball" />
+                </div>
+                <p class="meta">BASKETBALL DESIGN</p>
+                <h3>TJ Shorts II</h3>
+                <p>Poster Paris Basketball avec contraste rouge/bleu, découpage joueur et énergie très dynamique.</p>
+                <div class="card-tags"><span class="tag">Affiche</span><span class="tag">Euroleague</span></div>
+              </article>
+              <article class="card">
+                <div class="visual poster">
+                  <img src="assets/posters/shai.png" alt="Affiche Shai Gilgeous-Alexander Oklahoma City Thunder" />
+                </div>
+                <p class="meta">NBA DESIGN</p>
+                <h3>Shai Gilgeous-Alexander</h3>
+                <p>Composition OKC avec ambiance électrique, couleurs froides et mise en scène premium du joueur.</p>
+                <div class="card-tags"><span class="tag">Affiche</span><span class="tag">NBA</span></div>
+              </article>
+            </div>
+          </section>
+
+          <section class="section">
+            <p class="kicker">Méthode</p>
+            <h2>Une façon de travailler lisible, du brief au prototype.</h2>
+            <div class="steps">
+              <article class="step"><span class="step-number">01</span><h3>Comprendre</h3><p>Brief, objectifs, cibles, irritants.</p></article>
+              <article class="step"><span class="step-number">02</span><h3>Cadrer</h3><p>Scope, planning, priorités, livrables.</p></article>
+              <article class="step"><span class="step-number">03</span><h3>Concevoir</h3><p>Wireframes, UI, composants, prototype.</p></article>
+              <article class="step"><span class="step-number">04</span><h3>Livrer</h3><p>Recette, retours, synthèse client.</p></article>
+            </div>
+          </section>
+
+          <section class="section dark-section">
+            <p class="kicker">Compétences</p>
+            <h2>Des outils et réflexes pour piloter un projet digital.</h2>
+            <div class="skills">
+              <span class="tag">Figma</span><span class="tag">Auto layout</span><span class="tag">Benchmark</span><span class="tag">Wireframes</span><span class="tag">Planning</span><span class="tag">Notion</span><span class="tag">Trello</span><span class="tag">Recette</span>
+            </div>
+          </section>
+
+          <section class="contact">
+            <h2>Un projet à cadrer ?<br />On en parle.</h2>
+            <div class="button-row">
+              <div class="button"><span class="dot"></span>dylangraphixs@gmail.com</div>
+              <div class="button secondary"><span class="dot"></span>@dylangraphixs</div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section>
+        <p class="frame-label">Mobile - Accueil portfolio</p>
+        <div class="mobile">
+          <header class="header">
+            <div class="logo">DR.</div>
+            <div class="burger"><span></span><span></span><span></span></div>
+          </header>
+          <section class="mobile-section">
+            <span class="tag accent">Stage / alternance</span>
+            <h1>Chef de projet digital junior.</h1>
+            <p class="lead">Je conçois des parcours clairs, je cadre les priorités et je transforme les idées en prototypes présentables.</p>
+            <div class="button"><span class="dot"></span>Voir mes projets</div>
+          </section>
+          <section class="mobile-section white">
+            <h2>Projets sélectionnés</h2>
+            <div class="cards">
+              <article class="card">
+                <div class="visual poster">
+                  <img src="assets/posters/wemby.jpg" alt="Affiche Victor Wembanyama San Antonio Spurs" />
+                </div>
+                <p class="meta">NBA DESIGN</p>
+                <h3>Victor Wembanyama</h3>
+                <p>Affiche sportive pensée pour Instagram.</p>
+              </article>
+              <article class="card">
+                <div class="visual poster">
+                  <img src="assets/posters/leon-marchand.png" alt="Affiche Léon Marchand Jeux Olympiques 2024" />
+                </div>
+                <p class="meta">OLYMPIC DESIGN</p>
+                <h3>Léon Marchand</h3>
+                <p>Univers aquatique, couleurs fortes et impact social media.</p>
+              </article>
+            </div>
+          </section>
+          <section class="mobile-section">
+            <p class="kicker">Méthode</p>
+            <h2>Du brief au prototype.</h2>
+            <div class="steps">
+              <article class="step"><span class="step-number">01</span><h3>Comprendre</h3><p>Brief, objectifs, cibles.</p></article>
+              <article class="step"><span class="step-number">02</span><h3>Cadrer</h3><p>Scope, planning, priorités.</p></article>
+              <article class="step"><span class="step-number">03</span><h3>Concevoir</h3><p>Wireframes, UI, prototype.</p></article>
+            </div>
+          </section>
+          <section class="mobile-section dark-section">
+            <p class="kicker">Compétences</p>
+            <h2>Outils et réflexes projet.</h2>
+            <div class="skills">
+              <span class="tag">Figma</span><span class="tag">Benchmark</span><span class="tag">Wireframes</span><span class="tag">Planning</span><span class="tag">Notion</span><span class="tag">Trello</span>
+            </div>
+          </section>
+          <section class="contact">
+            <h2>Un projet à cadrer ?<br />On en parle.</h2>
+            <div class="button"><span class="dot"></span>@dylangraphixs</div>
+          </section>
+        </div>
+      </section>
+
+    </main>
+  </body>
+</html>
